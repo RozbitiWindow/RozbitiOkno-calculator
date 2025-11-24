@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "AmlzpjBGtO8=",
+  "success": true,
+  "projectFilePath": "/home/okno/calc/calc.csproj",
+  "expectedPackageFiles": [
+    "/home/okno/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.9/microsoft.aspnetcore.app.ref.9.0.9.nupkg.sha512"
+  ],
+  "logs": []
+}

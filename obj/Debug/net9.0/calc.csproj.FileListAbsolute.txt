@@ -1,0 +1,14 @@
+/home/okno/calc/obj/Debug/net9.0/calc.GeneratedMSBuildEditorConfig.editorconfig
+/home/okno/calc/obj/Debug/net9.0/calc.AssemblyInfoInputs.cache
+/home/okno/calc/obj/Debug/net9.0/calc.AssemblyInfo.cs
+/home/okno/calc/obj/Debug/net9.0/calc.csproj.CoreCompileInputs.cache
+/home/okno/calc/bin/Debug/net9.0/calc
+/home/okno/calc/bin/Debug/net9.0/calc.deps.json
+/home/okno/calc/bin/Debug/net9.0/calc.runtimeconfig.json
+/home/okno/calc/bin/Debug/net9.0/calc.dll
+/home/okno/calc/bin/Debug/net9.0/calc.pdb
+/home/okno/calc/obj/Debug/net9.0/calc.dll
+/home/okno/calc/obj/Debug/net9.0/refint/calc.dll
+/home/okno/calc/obj/Debug/net9.0/calc.pdb
+/home/okno/calc/obj/Debug/net9.0/calc.genruntimeconfig.cache
+/home/okno/calc/obj/Debug/net9.0/ref/calc.dll
