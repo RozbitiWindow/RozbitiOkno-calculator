@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Threading;
 
 class Program
@@ -22,6 +23,7 @@ class Program
         Console.WriteLine("2 → Random numbers");
         Console.WriteLine("3 → Unit converter");
         Console.WriteLine("4 → Play minigames");
+        Console.WriteLine("5 → See history");
         Console.WriteLine("0 → exit");
         Console.ResetColor();
         Console.ForegroundColor = ConsoleColor.DarkRed;
@@ -29,7 +31,7 @@ class Program
         Console.ResetColor();
         double whattodo = double.Parse(Console.ReadLine());
 
-        if (whattodo != 0 && whattodo != 1 && whattodo != 2 && whattodo != 3 && whattodo != 4 )
+        if (whattodo != 0 && whattodo != 1 && whattodo != 2 && whattodo != 3 && whattodo != 4 && whattodo != 5)
         {
             Console.WriteLine("ERROR: Not a number or invalid number!");
         }
@@ -422,12 +424,42 @@ class Program
             }
         }
 
+        if (whattodo == 5)
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("1 → Gaming history");
+            Console.WriteLine("2 → Calc history");
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.Write("Your choice: ");
+            Console.ResetColor();
+            double historyofnig = double.Parse(Console.ReadLine());
+
+            if (historyofnig == 1)
+            {
+                Console.WriteLine("SOON");
+            }
+            if (historyofnig != 1 && historyofnig != 2)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Invalid option! - " + historyofnig + " - try something else!");
+                Console.ResetColor();
+            }
+
+            if (historyofnig == 2)
+            {
+                Console.WriteLine("SOON");
+            }
+        
+        }
+
         else
         {
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Invalid option!");
             Console.ResetColor();
         }
+        
 
         Console.WriteLine("See more on github.com/rozbitiwindow");
         Console.ForegroundColor = ConsoleColor.Green;
@@ -438,4 +470,3 @@ class Program
         Console.ResetColor();
     }
 }
-//everything was made by RozbitiOkno - last edit 9:23 PM - 12/3/25
