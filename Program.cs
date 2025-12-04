@@ -1,13 +1,15 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Net;
+using System.Reflection;
 using System.Threading;
 
 class Program
 {
+    static List<string> historieScore = new List<string>();
     static void Main()
     {
-        Console.Clear();
         string ver = "1.0.4"; // everything was made by RozbitiOkno 24.11.2025 
 
         // HEADER
@@ -18,6 +20,9 @@ class Program
         Console.ResetColor();
 
         // MAIN MENU
+    while (true)
+    {
+        Console.Clear();
         Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine("1 → Calculations");
         Console.WriteLine("2 → Random numbers");
@@ -31,18 +36,50 @@ class Program
         Console.ResetColor();
         double whattodo = double.Parse(Console.ReadLine());
 
-        if (whattodo != 0 && whattodo != 1 && whattodo != 2 && whattodo != 3 && whattodo != 4 && whattodo != 5)
+        if (whattodo != 0 && whattodo != 1 && whattodo != 2 && whattodo != 3 && whattodo != 4 && whattodo != 5 && whattodo != 111)
         {
             Console.WriteLine("ERROR: Not a number or invalid number!");
         }
 
-        if (whattodo == 0)
+        if (whattodo == 0) //exit
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Exiting . . .");
+            Console.WriteLine("Exiting contains removing all your stuff like history and else do you want to continue? (y/n)");
             Console.ResetColor();
-            return;
+            Console.Write("Continue? (y/n) ");
+            string doyouwanttocontinue = Console.ReadLine();
+            if (doyouwanttocontinue == "y" || doyouwanttocontinue == "Y")
+                {
+                    Console.WriteLine("Exiting . . .");
+                    Console.ResetColor();
+                    return;
+                }
+            if (doyouwanttocontinue == "n" || doyouwanttocontinue == "N")
+                {
+                    continue;
+                }
+            if (doyouwanttocontinue != "n" || doyouwanttocontinue != "N" || doyouwanttocontinue != "Y" || doyouwanttocontinue != "y")
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Invalid option! (relocating in 3 sec.)");
+                    Console.ResetColor();
+                    Thread.Sleep(3000);
+                    continue;
+                }
         }
+        //okamzity exit 
+        else if (whattodo == 111)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Immediate termination and non-saving of things . . .");
+                Console.ResetColor();
+                Thread.Sleep(1000);
+                Console.WriteLine("Exiting . . .");
+                Console.ResetColor();
+                return;
+                
+            }
+
 
         // ------------------------- CALCULATOR ------------------------- //
         if (whattodo == 1)
@@ -259,9 +296,9 @@ class Program
             Console.WriteLine("=== Unit Converter v." + ver + " ===");
             Console.ResetColor();
 
-            Console.WriteLine("1 → KM to M | 2 → M to CM | 3 → CM to MM");
-            Console.WriteLine("4 → M to KM | 5 → CM to M | 6 → MM to CM");
-            Console.WriteLine("7 → T to KG | 8 → KG to G | 9 → G to mG");
+                Console.WriteLine("1 → KM to M  | 2 → M to CM  | 3 → CM to MM");
+            Console.WriteLine("4 → M to KM  | 5 → CM to M  | 6 → MM to CM");
+            Console.WriteLine("7 → T to KG  | 8 → KG to G  | 9 → G to mG");
             Console.WriteLine("10 → KG to T | 11 → G to KG | 12 → mG to G");
             Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.Write("Your choice: ");
@@ -339,7 +376,9 @@ class Program
                     else
                         Console.WriteLine("Higher!");
                 }
-
+                
+                string zaznam = $"Guess the number - date: {DateTime.Now}";
+                historieScore.Add(zaznam);
                 Console.WriteLine("Thanks for playing!");
             }
 
@@ -390,6 +429,8 @@ class Program
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("GAME OVER!");
                         Console.WriteLine("Score: " + score);
+                        string zaznam = $"Snake the game: {score} - Date: {DateTime.Now}";
+                        historieScore.Add(zaznam);
                         Console.ResetColor();
                         break;
                     }
@@ -437,7 +478,21 @@ class Program
 
             if (historyofnig == 1)
             {
-                Console.WriteLine("SOON");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("=== Gaming history ===");
+                Console.ResetColor();
+                Console.WriteLine("");
+
+                if (historieScore.Count == 0)
+                {
+                    Console.WriteLine("Nothing there . . .");
+                }
+                foreach (string zaznam in historieScore)
+                {
+                    
+                    Console.WriteLine(zaznam);
+                    Console.WriteLine("");
+                }
             }
             if (historyofnig != 1 && historyofnig != 2)
             {
@@ -455,9 +510,9 @@ class Program
 
         else
         {
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Invalid option!");
-            Console.ResetColor();
+            //Console.ForegroundColor = ConsoleColor.Red;
+            //Console.WriteLine("Invalid option!");
+            //Console.ResetColor();
         }
         
 
@@ -468,5 +523,10 @@ class Program
         Console.ResetColor();
         Console.WriteLine("Thanks for using RozbitiOkno operators!");
         Console.ResetColor();
-    }
+    continue;
+    }    
+    
+  }
+
 }
+//everything was edited By RozbitiOkno on 12/4/25 at 8/02 PM
